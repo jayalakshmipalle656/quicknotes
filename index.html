@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quick Note App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📝 Quick Note Application</h1>
+
+    <form method="POST">
+
+        <input
+            type="text"
+            name="note"
+            placeholder="Write your note..."
+            required
+        >
+
+        <button type="submit">
+            Save Note
+        </button>
+
+    </form>
+
+    <h2>Saved Notes</h2>
+
+    {% for note in notes %}
+
+    <div class="note-card">
+
+        <p>{{ note[1] }}</p>
+
+        <small>
+            Saved on: {{ note[2] }}
+        </small>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
